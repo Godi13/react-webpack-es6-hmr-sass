@@ -20,8 +20,11 @@ module.exports = {
   ],
   module: {
     loaders: [{
-      test: /\.jsx?$/,
-      loaders: ['babel-loader?presets[]=es2015&presets[]=react'],
+      test: /\.js[x]?$/,
+      loader: 'babel',
+      query: {
+        presets: ['es2015', 'react']
+      },
       include: path.join(__dirname, 'src')
     }, {
       test: /\.scss$/,
